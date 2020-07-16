@@ -198,9 +198,10 @@ int mx_battle(SDL_Renderer *renderer, t_gamestate *game) {
     mx_draw_bullets(renderer, game);
     mx_set_cat_sound(game,move);
 
-    if (game->player->death)
+    if (game->player->death){
         mx_set_gameover_scene(game);
-
+        mx_restart_gamestate(game);
+    }
     game->last_time += time;
     return 1;
 }

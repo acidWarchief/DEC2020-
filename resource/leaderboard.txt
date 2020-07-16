@@ -1,9 +1,9 @@
-1 MICHAEL
-0 ARTEM
-0 NATALY
-0 empty
-0 empty
-0 empty
+113 Artem
+4 dfsdfa
+1 empty
+1 artem
+1 artem
+1 asdasd
 0 empty
 0 empty
 0 empty

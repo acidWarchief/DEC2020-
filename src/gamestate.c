@@ -2,7 +2,7 @@
 
 t_gamestate *mx_restart_gamestate(t_gamestate *game){
     //t_enemy *enemy= game->enemies;
-    while (game->enemies) 
+    while (game->enemies)
         game->enemies = mx_del_enemy(game->enemies);
 
     game->wave_number = 0;
@@ -12,7 +12,8 @@ t_gamestate *mx_restart_gamestate(t_gamestate *game){
     game->player = mx_init_player();
     game->last_time = SDL_GetTicks();
     //printf("killcount : %d\n", game->kill_count);
-    game->kill_count = 0;
+    //game->kill_count = 0;
+    game->input_name = false;
     return game;
 }
 
@@ -28,12 +29,13 @@ t_gamestate *mx_init_gamestate(SDL_Renderer *renderer){
     game->kill_count = 0;
     game->player->caterpillar = 0;
     game->player->caterpillar_time = 0.0;
-    
+    game->input_name = false;
+
     game->sounds = (t_ingameSound *)malloc(sizeof(t_ingameSound));
     game->sounds->track = (Mix_Chunk **)malloc(sizeof(Mix_Chunk *) * SOUNDS_AMOUNT);
     game->sounds->channel = (int *)malloc(sizeof(int) * SOUNDS_AMOUNT);
     game->sounds->pause = (bool *)malloc(sizeof(bool) * SOUNDS_AMOUNT);
-    
+
     game->sounds->track[TANK_MOVE] = Mix_LoadWAV("resource/Sounds/tank_move.wav");
     game->sounds->track[TANK_SHOT] = Mix_LoadWAV("resource/Sounds/tank_shot.wav");
     game->sounds->track[TANK_DEATH] = Mix_LoadWAV("resource/Sounds/tank_death.wav");

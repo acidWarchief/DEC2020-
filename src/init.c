@@ -151,32 +151,6 @@ t_player *mx_init_player(void) {
     res->exp = 0;
     res->cur_weapon = mx_init_waepon(0);
     res->death = 0;
-    res->cur_sprite = 0;
-
-        res->sprites_deskr[0] = TEX_PLAYERDEATH1;
-        res->sprites_deskr[1] = TEX_PLAYERDEATH2;
-        res->sprites_deskr[2] = TEX_PLAYERDEATH3;
-        res->sprites_deskr[3] = TEX_PLAYERDEATH4;
-        res->sprites_deskr[4] = TEX_PLAYERDEATH5;
-        res->sprites_deskr[5] = TEX_PLAYERDEATH6;
-        res->sprites_deskr[6] = TEX_PLAYERDEATH7;
-        res->sprites_deskr[7] = TEX_PLAYERDEATH8;
-        res->sprites_deskr[8] = TEX_PLAYERDEATH9;
-        res->sprites_deskr[9] = TEX_PLAYERDEATH10;
-        res->sprites_deskr[10] = TEX_PLAYERDEATH11;
-        res->sprites_deskr[11] = TEX_PLAYERDEATH12;
-        res->sprites_deskr[12] = TEX_PLAYERDEATH13;
-        res->sprites_deskr[13] = TEX_PLAYERDEATH14;
-        res->sprites_deskr[14] = TEX_PLAYERDEATH15;
-        res->sprites_deskr[15] = TEX_PLAYERDEATH16;
-        res->sprites_deskr[16] = TEX_PLAYERDEATH17;
-        res->sprites_deskr[17] = TEX_PLAYERDEATH18;
-        res->sprites_deskr[18] = TEX_PLAYERDEATH19;
-        res->sprites_deskr[19] = TEX_PLAYERDEATH20;
-        res->sprites_deskr[20] = TEX_PLAYERDEATH21;
-        res->sprites_deskr[21] = TEX_PLAYERDEATH22;
-        res->sprites_deskr[22] = TEX_PLAYERDEATH23;
-        res->sprites_deskr[23] = TEX_PLAYERDEATH24;
     //write(2, "player initialized\n",19);
     return res;
 }
@@ -220,26 +194,26 @@ t_enemy *mx_del_enemy(t_enemy *enemy) {
     t_enemy *tmp = NULL;
     if (enemy) {
         if (enemy->next == NULL && enemy->prev == NULL) {
-            write(2, " 1$", 3);
+            //write(2, " 1$", 3);
             free(enemy);
             enemy = NULL;
         }
         else if (enemy->next == NULL) {
-            write(2, " 2$", 3);
+            //write(2, " 2$", 3);
             enemy->prev->next = NULL;
             tmp = enemy->prev;
             free(enemy);
             enemy = NULL;
         }
         else if (enemy->prev == NULL) {
-            write(2, " 3$", 3);
+            //write(2, " 3$", 3);
             enemy->next->prev = NULL;
             tmp = enemy->next;
             free(enemy);
             enemy = NULL;
         }
         else if (enemy->prev && enemy->next) {
-            write(2, " 4$", 3);
+            //write(2, " 4$", 3);
             enemy->prev->next = enemy->next;
             enemy->next->prev = enemy->prev;
             tmp = enemy->next;

@@ -102,5 +102,4 @@ void mx_leaderboard(SDL_Renderer *renderer, t_gamestate *game) {
 
     }
     TTF_CloseFont(fnt); // Закрываем шрифт
-    write(2,"!#\n",3);
 }

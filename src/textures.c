@@ -1,7 +1,7 @@
 #include "DEC2020.h"
 #include "textures.h"
 
-#define TEXTURES_COUNT 84
+#define TEXTURES_COUNT 61
 
 SDL_Texture **mx_init_textures(SDL_Renderer *renderer){
     char *paths[TEXTURES_COUNT] = {"/resource/Textures/Background/Start.png",
@@ -13,6 +13,7 @@ SDL_Texture **mx_init_textures(SDL_Renderer *renderer){
                     "/resource/Textures/Background/Gameover_retry.png",
                     "/resource/Textures/Background/Gameover_leader.png",
                     "/resource/Textures/Background/Gameover_menu.png",
+                    "/resource/Textures/Background/Gameover_type.png",
                     "/resource/Textures/Background/Leaderboard.png",
                     "/resource/Textures/target.png",
                     "/resource/Textures/tank_hull/blue_tank_hull_1.png",
@@ -63,31 +64,7 @@ SDL_Texture **mx_init_textures(SDL_Renderer *renderer){
                     "/resource/Textures/enemy/bug_3_d7.png",
                     "/resource/Textures/enemy/bug_3_d8.png",
                     "/resource/Textures/enemy/bug_3_d9.png",
-                    "/resource/Textures/bullet_1.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_1.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_2.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_3.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_4.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_5.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_6.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_7.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_8.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_9.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_10.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_11.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_12.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_13.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_14.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_15.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_16.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_17.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_18.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_19.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_20.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_21.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_22.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_23.png",
-                    "/resource/Textures/tank_explosion/Tank_red_exp_24.png"
+                    "/resource/Textures/bullet_1.png"
     };
     SDL_Texture **textures = (SDL_Texture**)malloc (TEXTURES_COUNT * sizeof(SDL_Texture**));
     for (int i = 0; i < TEXTURES_COUNT; i++){

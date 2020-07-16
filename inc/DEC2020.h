@@ -20,13 +20,13 @@
 #define W_HEIGHT 900
 
 #define PLAYER_SPEED 0.2
-#define PLAYER_HEALTH 200
+#define PLAYER_HEALTH 50
 #define REV_SPEED_MOD 0.75
 
 #define ENEMY_SIZE_1 50
-#define ENEMY_HEALTH_0 50
-#define ENEMY_HEALTH_1 50
-#define ENEMY_HEALTH_2 50
+#define ENEMY_HEALTH_0 25
+#define ENEMY_HEALTH_1 40
+#define ENEMY_HEALTH_2 70
 #define ENEMY_DAMAGE_0 5
 #define ENEMY_DAMAGE_1 7
 #define ENEMY_DAMAGE_2 9
@@ -113,8 +113,6 @@ typedef struct s_player {
     double speed;
     int exp;
     bool death;
-    enum e_textures sprites_deskr[24];
-    uint cur_sprite;
     t_weapon *cur_weapon;
 }               t_player;
 
@@ -152,6 +150,7 @@ typedef struct s_ingameSound {
 typedef struct s_gamestate {
     unsigned int last_time;
     enum e_scenestate scene;
+    bool input_name;
     t_player *player;
     t_enemy *enemies;
     int kill_count;
@@ -176,6 +175,10 @@ int mx_mainmenu(SDL_Renderer *renderer, t_gamestate *game);
 int mx_gameover_menu(SDL_Renderer *renderer, t_gamestate *game);
 int mx_battle(SDL_Renderer *renderer, t_gamestate *game);
 void mx_leaderboard(SDL_Renderer *renderer, t_gamestate *game);
+
+t_player_stats mx_read_leaderboeard_file(void);
+void file_write(t_player_stats stats);
+t_player_stats board_updated(t_player_stats stats, char new_name[MAX_NAME_LENGTH], int new_score);
 //Spawning and initialization
 void mx_spawn_corpse(t_gamestate *gmst, t_enemy *enemy);
 void mx_spawn_enemy(t_gamestate *gmst, int type, t_position pos);

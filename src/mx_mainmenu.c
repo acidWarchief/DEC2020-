@@ -57,6 +57,7 @@ int mx_mainmenu(SDL_Renderer *renderer, t_gamestate *game) {
         case 1:
             running = 2;
             tex = mx_get_texture(game, TEX_BACKGROUND_START_CLICKED);
+            game->last_time = SDL_GetTicks();
             mx_set_battle_scene(game);
             break;
         case 2:
@@ -66,7 +67,7 @@ int mx_mainmenu(SDL_Renderer *renderer, t_gamestate *game) {
             break;
         case 3:
             running = 3;
-            write(1,"quit", 4);
+            //write(1,"quit", 4);
             tex = mx_get_texture(game, TEX_BACKGROUND_START_QUIT_CLICKED);
             break;
         default:
